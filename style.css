@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+section {
+  min-width: 300px;
+  padding: 15px 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game-menu {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-type {
+  display: flex;
+  gap: 10px;
+}
+
+.cards-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.cards-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.card {
+  min-width: 50px;
+  height: 90px;
+  transition: 1s;
+  position: relative;
+}
+
+.card-side {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transition: transform 0.5s linear;
+  perspective: 300px;
+  display: flex;
+}
+
+.card div {
+  transform: rotateY(0deg);
+}
+
+.card div + div {
+  transform: rotateY(180deg);
+}
+
+.card.card-back-side {
+  transform: rotateY(180deg);
+}
+
+.card.card-back-side div {
+  transform: rotateY(-180deg);
+}
+
+.card.card-back-side div + div {
+  transform: rotateY(0);
+  /* transform: rotateY(180deg); */
+}
+
+.face {
+  background-color: #337ded;
+}
+.back {
+  background-color: white;
+}
+
+.card.card-back-side.success div + div {
+  background-color: rgb(49, 206, 125) !important;
+}
+
+/* .face:hover {
+  background-color: #e0dada;
+} */
+
+/* .face-active {
+  transform: rotateY(-180deg);
+}  */
+
+/* .face-active + div {
+  display: none;
+}
+
+.face-active div + div {
+  display: block;
+} */
+
+/* .back-active {
+  transform: rotateY(0deg);
+} */
+
+/* .yellow {
+  background-image: url("./img/1.jpg");
+}
+
+.red {
+  background-image: url("./img/2.jpg");
+}
+
+.green {
+  background-image: url("./img/3.jpg");
+}
+
+.blue {
+  background-image: url("./img/4.jpg");
+}
+
+.purple {
+  background-image: url("./img/5.jpg");
+}
+
+.orange {
+  background-image: url("./img/6.jpg");
+}
+
+.gray {
+  background-image: url("./img/7.jpg");
+}
+
+.pink {
+  background-image: url("./img/8.jpg");
+} */
+
+.success {
+  background-color: rgb(49, 206, 125) !important;
+}
+
+.winner {
+  background-image: url("./img/winner.jpg");
+  height: 330px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.button {
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+}
+
+.game-type-button {
+  background-color: bisque;
+}
+
+.restartBtn {
+  background-color: darkgoldenrod;
+}
